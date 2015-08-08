@@ -1,0 +1,8 @@
+{application, recdump, [ {description, "Decord dumper and loader."}
+                      , {vsn, "1.0"}
+                      , {modules, []}
+                      , {registered, []}
+                      , {applications, [kernel,stdlib]}
+                      , {mod, {recdump_app, []}} 
+                      , {env, []}
+                      ]}.
