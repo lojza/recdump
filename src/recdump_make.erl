@@ -74,6 +74,7 @@ form_to_rec_def (_) -> false.
 
 attr_names ([Attr | Tail]) ->
     case Attr of
+        {typed_record_field, {record_field, _,{atom, _, AttrName}}, _} when is_atom (AttrName) -> [AttrName | attr_names(Tail)];
         {record_field, _,{atom, _, AttrName}, _} when is_atom (AttrName) -> [AttrName | attr_names(Tail)];
         {record_field, _,{atom, _, AttrName}} when is_atom (AttrName) -> [AttrName | attr_names(Tail)];
         _ -> attr_names (Tail)
